@@ -54,6 +54,7 @@ public class transaksi extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         tableload(jTable1);
         kodeload(txnotransaksi);
+        idpelanggan();
     }
 
     /**
@@ -65,9 +66,10 @@ public class transaksi extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
         jLabel12 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -100,21 +102,13 @@ public class transaksi extends javax.swing.JFrame {
         printpdf = new javax.swing.JButton();
         txtanggal = new javax.swing.JTextField();
         cbberat = new javax.swing.JComboBox();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Data Transaksi - JossLaundry");
         setUndecorated(true);
 
-        jPanel2.setBackground(new java.awt.Color(102, 204, 255));
-
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("X");
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
-            }
-        });
+        jPanel3.setBackground(new java.awt.Color(51, 153, 255));
 
         jLabel2.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -125,6 +119,17 @@ public class transaksi extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("X");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
+
+        jPanel2.setBackground(new java.awt.Color(102, 204, 255));
+
         jLabel12.setFont(new java.awt.Font("Comic Sans MS", 1, 40)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel12.setText("Data Transaksi");
@@ -134,8 +139,9 @@ public class transaksi extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBackground(new java.awt.Color(211, 230, 240));
+        jPanel1.setBackground(new java.awt.Color(166, 228, 244));
 
+        jTable1.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
@@ -166,7 +172,7 @@ public class transaksi extends javax.swing.JFrame {
         jTextPane1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jScrollPane2.setViewportView(jTextPane1);
 
-        search.setBackground(new java.awt.Color(102, 204, 255));
+        search.setBackground(new java.awt.Color(0, 153, 255));
         search.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         search.setText("Search");
         search.addActionListener(new java.awt.event.ActionListener() {
@@ -175,13 +181,17 @@ public class transaksi extends javax.swing.JFrame {
             }
         });
 
-        cbsearch.setBackground(new java.awt.Color(153, 204, 255));
+        cbsearch.setBackground(new java.awt.Color(0, 153, 255));
+        cbsearch.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
         cbsearch.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "No Transaksi", "ID Pegawai", "ID Pelanggan", "ID Jenis" }));
         cbsearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbsearchActionPerformed(evt);
             }
         });
+
+        txsearch.setBackground(new java.awt.Color(213, 246, 255));
+        txsearch.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
 
         jLabel3.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jLabel3.setText("ID Pelanggan");
@@ -198,6 +208,9 @@ public class transaksi extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jLabel7.setText("ID Pegawai");
 
+        txidjenis.setEditable(false);
+        txidjenis.setBackground(new java.awt.Color(213, 246, 255));
+        txidjenis.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         txidjenis.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txidjenisActionPerformed(evt);
@@ -205,13 +218,29 @@ public class transaksi extends javax.swing.JFrame {
         });
 
         txnotransaksi.setEditable(false);
+        txnotransaksi.setBackground(new java.awt.Color(213, 246, 255));
+        txnotransaksi.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
+
+        txidpegawai.setBackground(new java.awt.Color(213, 246, 255));
+        txidpegawai.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
+
+        txidpelanggan.setEditable(false);
+        txidpelanggan.setBackground(new java.awt.Color(213, 246, 255));
+        txidpelanggan.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
 
         txkembali.setEditable(false);
+        txkembali.setBackground(new java.awt.Color(213, 246, 255));
+        txkembali.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
+
+        txbayar.setBackground(new java.awt.Color(213, 246, 255));
+        txbayar.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
 
         txtotal.setEditable(false);
+        txtotal.setBackground(new java.awt.Color(213, 246, 255));
+        txtotal.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
 
         jLabel8.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
-        jLabel8.setText("Total");
+        jLabel8.setText("Total Rp.");
 
         jLabel9.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jLabel9.setText("Bayar Rp.");
@@ -222,7 +251,7 @@ public class transaksi extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         jLabel11.setText("Berat Cucian");
 
-        insert.setBackground(new java.awt.Color(102, 204, 255));
+        insert.setBackground(new java.awt.Color(0, 153, 255));
         insert.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         insert.setText("Insert");
         insert.addActionListener(new java.awt.event.ActionListener() {
@@ -231,7 +260,7 @@ public class transaksi extends javax.swing.JFrame {
             }
         });
 
-        update.setBackground(new java.awt.Color(102, 204, 255));
+        update.setBackground(new java.awt.Color(0, 153, 255));
         update.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         update.setText("Update");
         update.addActionListener(new java.awt.event.ActionListener() {
@@ -240,7 +269,7 @@ public class transaksi extends javax.swing.JFrame {
             }
         });
 
-        jButton7.setBackground(new java.awt.Color(102, 204, 255));
+        jButton7.setBackground(new java.awt.Color(0, 153, 255));
         jButton7.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jButton7.setText("Delete");
         jButton7.addActionListener(new java.awt.event.ActionListener() {
@@ -249,7 +278,7 @@ public class transaksi extends javax.swing.JFrame {
             }
         });
 
-        clear.setBackground(new java.awt.Color(102, 204, 255));
+        clear.setBackground(new java.awt.Color(0, 153, 255));
         clear.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         clear.setText("C");
         clear.addActionListener(new java.awt.event.ActionListener() {
@@ -258,7 +287,7 @@ public class transaksi extends javax.swing.JFrame {
             }
         });
 
-        printpdf.setBackground(new java.awt.Color(102, 204, 255));
+        printpdf.setBackground(new java.awt.Color(0, 153, 255));
         printpdf.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         printpdf.setText("Print PDF");
         printpdf.addActionListener(new java.awt.event.ActionListener() {
@@ -268,6 +297,8 @@ public class transaksi extends javax.swing.JFrame {
         });
 
         txtanggal.setEditable(false);
+        txtanggal.setBackground(new java.awt.Color(213, 246, 255));
+        txtanggal.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         txtanggal.setText("System Date");
         txtanggal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -275,7 +306,8 @@ public class transaksi extends javax.swing.JFrame {
             }
         });
 
-        cbberat.setBackground(new java.awt.Color(153, 204, 255));
+        cbberat.setBackground(new java.awt.Color(0, 153, 255));
+        cbberat.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
         cbberat.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9" }));
         cbberat.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -426,45 +458,64 @@ public class transaksi extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 18, Short.MAX_VALUE)))
-                .addContainerGap())
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
                 .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addContainerGap(26, Short.MAX_VALUE))
+        );
+
+        jLabel13.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
+        jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel13.setText("Back >>");
+        jLabel13.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel13MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 1, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -699,6 +750,12 @@ public class transaksi extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel12MouseClicked
 
+    private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
+        // TODO add your handling code here:
+        new jenis_cucian().setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jLabel13MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -744,6 +801,7 @@ public class transaksi extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -754,6 +812,7 @@ public class transaksi extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
@@ -795,6 +854,22 @@ public class transaksi extends javax.swing.JFrame {
             
         }
     }
+    
+    private void idpelanggan() {
+        String idpel = "";
+        try { 
+            String sql = "SELECT max(id_pelanggan) FROM pelanggan";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            ResultSet rset = pst.executeQuery(sql);
+            while (rset.next()){
+                idpel = rset.getString(1);
+            }
+            txidpelanggan.setText(idpel);
+        } catch (Exception ex) {
+            
+        }
+    }
+    
     
     private void kodeload(JTextField jText) {
         try {
