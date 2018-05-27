@@ -27,6 +27,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.print.*;
 import javax.print.attribute.*;
 import javax.print.attribute.standard.*;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import static laundry.koneksi.getConnection;
@@ -494,7 +495,8 @@ public class transaksi extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
-        int dialogButton = JOptionPane.showConfirmDialog (null, "Yakin Ingin Menghapus?","WARNING", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
+        ImageIcon icon = new ImageIcon("src/images/trash.png");
+        int dialogButton = JOptionPane.showConfirmDialog (null, "Yakin Ingin Menghapus?","WARNING", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, icon);
         System.out.println(dialogButton);
         if(dialogButton == JOptionPane.YES_OPTION){
             db.putData("DELETE FROM transaksi WHERE no_transaksi = " + txnotransaksi.getText());

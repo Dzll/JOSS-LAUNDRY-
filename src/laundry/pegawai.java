@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.Vector;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
@@ -363,7 +364,8 @@ public class pegawai extends javax.swing.JFrame {
 
     private void deleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteActionPerformed
         // TODO add your handling code here:
-        int dialogButton = JOptionPane.showConfirmDialog (null, "Yakin Ingin Menghapus?","WARNING", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
+        ImageIcon icon = new ImageIcon("src/images/trash.png");
+        int dialogButton = JOptionPane.showConfirmDialog (null, "Yakin Ingin Menghapus?","WARNING", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, icon);
         System.out.println(dialogButton);
         if(dialogButton == JOptionPane.YES_OPTION){
             db.putData("DELETE FROM pegawai WHERE id_pegawai = " + txid.getText());
