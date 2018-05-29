@@ -112,6 +112,7 @@ public class pelanggan extends javax.swing.JFrame {
         jLabel8.setText("Data Pelanggan");
 
         jPanel1.setBackground(new java.awt.Color(166, 228, 244));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 255), 2));
 
         jLabel1.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         jLabel1.setText("Id Pelanggan");
@@ -194,7 +195,7 @@ public class pelanggan extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "id Pelanggan", "Nama Pelanggan", "Alamat Pelanggan", "Nohp Pelanggan"
+                "ID Pelanggan", "Nama Pelanggan", "Alamat Pelanggan", "Nohp Pelanggan"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -230,7 +231,7 @@ public class pelanggan extends javax.swing.JFrame {
             }
         });
 
-        cbsearch.setBackground(new java.awt.Color(153, 204, 255));
+        cbsearch.setBackground(new java.awt.Color(0, 153, 255));
         cbsearch.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
         cbsearch.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ID Pelanggan", "Nama Pelanggan", "Alamat Pelanggan", "Nohp Pelanggan" }));
 
@@ -314,9 +315,9 @@ public class pelanggan extends javax.swing.JFrame {
                             .addComponent(update, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(insert, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(delete, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
@@ -332,7 +333,7 @@ public class pelanggan extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 498, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(27, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

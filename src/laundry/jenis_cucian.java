@@ -89,6 +89,7 @@ public class jenis_cucian extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(102, 204, 255));
 
         jPanel1.setBackground(new java.awt.Color(166, 228, 244));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 255), 2));
 
         jTable1.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -100,7 +101,7 @@ public class jenis_cucian extends javax.swing.JFrame {
                 {null, null, null}
             },
             new String [] {
-                "ID Jenis", "Nama_jenis", "Harga /Kg"
+                "ID Jenis", "Nama Jenis", "Harga /Kg"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -160,6 +161,7 @@ public class jenis_cucian extends javax.swing.JFrame {
         select.setBackground(new java.awt.Color(0, 153, 255));
         select.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
         select.setText("Select");
+        select.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         select.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 selectActionPerformed(evt);
@@ -241,7 +243,7 @@ public class jenis_cucian extends javax.swing.JFrame {
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
+                .addGap(24, 24, 24))
         );
 
         jLabel7.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N

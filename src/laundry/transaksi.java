@@ -10,6 +10,7 @@ import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.PageSize;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
+import java.awt.print.PrinterException;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.logging.Level;
@@ -140,6 +141,7 @@ public class transaksi extends javax.swing.JFrame {
         });
 
         jPanel1.setBackground(new java.awt.Color(166, 228, 244));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 255), 2));
 
         jTable1.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -157,9 +159,17 @@ public class transaksi extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "No_transaksi", "id_pegawai", "id_pelanggan", "id_jenis", "tanggal", "berat", "harga_total", "pembayaran", "Kembalian"
+                "No Transaksi", "ID Pegawai", "ID Pelanggan", "ID Jenis", "Tanggal", "Berat", "Harga Total", "Pembayaran", "Kembalian"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jTable1.setSelectionBackground(new java.awt.Color(51, 102, 255));
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -169,6 +179,7 @@ public class transaksi extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         jTextPane1.setEditable(false);
+        jTextPane1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 255)));
         jTextPane1.setFont(new java.awt.Font("Comic Sans MS", 0, 12)); // NOI18N
         jScrollPane2.setViewportView(jTextPane1);
 
@@ -289,7 +300,7 @@ public class transaksi extends javax.swing.JFrame {
 
         printpdf.setBackground(new java.awt.Color(0, 153, 255));
         printpdf.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        printpdf.setText("Print PDF");
+        printpdf.setText("Print");
         printpdf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 printpdfActionPerformed(evt);
@@ -347,11 +358,11 @@ public class transaksi extends javax.swing.JFrame {
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(txnotransaksi, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(insert, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(printpdf)
+                                        .addComponent(printpdf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(update)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -460,7 +471,7 @@ public class transaksi extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -486,9 +497,9 @@ public class transaksi extends javax.swing.JFrame {
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(8, 8, 8)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -498,11 +509,12 @@ public class transaksi extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, 19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel13)
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -515,7 +527,7 @@ public class transaksi extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -613,6 +625,14 @@ public class transaksi extends javax.swing.JFrame {
 
     private void printpdfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_printpdfActionPerformed
         // TODO add your handling code here:
+        try{
+            jTextPane1.print();
+        }catch(PrinterException e){
+            JOptionPane.showMessageDialog(null, "ERROR !!");
+            //Logger.getLogger(PrinterSys.class.getName()).log(Level.SEVERE, null, e);
+        }
+        
+        /*
         try {
             // TODO add your handling code here:
             Document doc = new Document(PageSize.A4, 150f, 150f, 0f, 0f);
@@ -629,7 +649,7 @@ public class transaksi extends javax.swing.JFrame {
             Logger.getLogger(transaksi.class.getName()).log(Level.SEVERE, null, ex);
         } catch (DocumentException ex) {
             Logger.getLogger(transaksi.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
     }//GEN-LAST:event_printpdfActionPerformed
 
     private void txtanggalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtanggalActionPerformed
@@ -638,6 +658,7 @@ public class transaksi extends javax.swing.JFrame {
 
     private void updateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateActionPerformed
         // TODO add your handling code here:
+        int kembali = Integer.parseInt(txbayar.getText()) - Integer.parseInt(sumtotal);
         try {
             String sql = "UPDATE transaksi SET id_pegawai = "
                 + txidpegawai.getText() + ", id_pelanggan = "
@@ -646,7 +667,7 @@ public class transaksi extends javax.swing.JFrame {
                 + cbberat.getSelectedItem().toString() + ", harga_total = " 
                 + txtotal.getText() + ", pembayaran = "
                 + txbayar.getText() + ", kembalian = "
-                + txkembali.getText() + " WHERE no_transaksi = "
+                + kembali + " WHERE no_transaksi = "
                 + txnotransaksi.getText();
             
             PreparedStatement pst = conn.prepareStatement(sql);
@@ -1002,20 +1023,31 @@ public class transaksi extends javax.swing.JFrame {
     }
     
     private void viewStruct(){
-        jTextPane1.setText(String.valueOf("\t         -- JOSS LAUNDRY -- \n " 
+        String jcu = "";
+        try { 
+            String sql = "SELECT nama_jenis FROM jenis_cucian WHERE id_jenis = " + txidjenis.getText();
+            PreparedStatement pst = conn.prepareStatement(sql);
+            ResultSet rset = pst.executeQuery(sql);
+            while (rset.next()){
+                jcu = rset.getString(1);
+            }
+        } catch (Exception ex) {
+            
+        }
+        jTextPane1.setText(String.valueOf("\t      -- JOSS LAUNDRY -- \n " 
                 + "          Jasa Layanan Cuci Kering Setrika Pakaian \n"
                 + "      Jl.Semolowaru No.15 | 031-77175735 Surabaya \n"
                 + " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n\n No Transaksi \t : "
-                + jTable1.getValueAt(jTable1.getSelectedRow(), 0) + " \n ID Jenis \t\t : "
-                + jTable1.getValueAt(jTable1.getSelectedRow(), 3) + " \n Tanggal \t\t : "
-                + jTable1.getValueAt(jTable1.getSelectedRow(), 4) + " \n Berat Cucian \t : " 
+                + jTable1.getValueAt(jTable1.getSelectedRow(), 0) + " \n Tanggal \t\t : "
+                + jTable1.getValueAt(jTable1.getSelectedRow(), 4) + " \n Jenis Cucian \t : "
+                + jcu + " \n Berat Cucian \t : " 
                 + jTable1.getValueAt(jTable1.getSelectedRow(), 5) + " \n"
                 + " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"
-                + "\n Harga Total \t : "
+                + "\n Harga Total \t : Rp. "
                 + jTable1.getValueAt(jTable1.getSelectedRow(), 6) + " \n"
-                + " Pembayaran \t : " + jTable1.getValueAt(jTable1.getSelectedRow(), 7) + " \n"
+                + " Bayar \t\t : Rp. " + jTable1.getValueAt(jTable1.getSelectedRow(), 7) + " \n"
                 + " - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -"
-                + " \n *Kembalian \t : " + jTable1.getValueAt(jTable1.getSelectedRow(), 8) + " \n"
+                + " \n *Kembalian \t\t : Rp. " + jTable1.getValueAt(jTable1.getSelectedRow(), 8) + " \n"
         ));
         
     }

@@ -6,8 +6,15 @@
 package laundry;
 
 import java.awt.Frame;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import static laundry.koneksi.getConnection;
+import static laundry.transaksi.txidjenis;
 
 /**
  *
@@ -15,12 +22,20 @@ import javax.swing.JOptionPane;
  */
 public class login extends javax.swing.JFrame {
 
+    public static String user ;
+    public static String pass ;
+    public static int u;
+    koneksi db = new koneksi();
+    Connection conn = getConnection();
+    Statement stat;
+    ResultSet rset;
     /**
      * Creates new form login
      */
     public login() {
         initComponents();
         setLocationRelativeTo(null);
+        getConnection();
     }
 
     /**
@@ -194,14 +209,27 @@ public class login extends javax.swing.JFrame {
 
     private void signActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_signActionPerformed
         // TODO add your handling code here:
-        if(username.getText().equals("admin") && password.getText().equals("admin")){
-            new menu().setVisible(true);
-            dispose();
-        }else if(username.getText().equals("pegawai") && password.getText().equals("pegawai")){
-            new pelanggan().setVisible(true);
-            dispose();
-        }else{
-            JOptionPane.showMessageDialog(null, "Username atau Password Salah !!");
+        user = username.getText();
+        pass = password.getText();
+        try {
+            String sql = "SELECT * FROM login WHERE username = '"+username.getText()+"' AND password = '"+password.getText()+"'";
+            PreparedStatement pst = conn.prepareStatement(sql);
+            rset = pst.executeQuery(sql);
+            if(rset.next()){
+                if(user.equals(rset.getString("username")) && pass.equals(rset.getString("password"))){
+                    JOptionPane.showMessageDialog(null, "Login Success");
+                    if(user.equals("admin")){
+                        new menu().setVisible(true);
+                        dispose();
+                    }else if(user.equals("pegawai")){
+                        new pelanggan().setVisible(true);
+                    }
+                }
+            }else{
+                    JOptionPane.showMessageDialog(null, "Username atau Password Salah");
+            }
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, e.getMessage());
         }
     }//GEN-LAST:event_signActionPerformed
 

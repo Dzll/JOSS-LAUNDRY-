@@ -101,6 +101,7 @@ public class pegawai extends javax.swing.JFrame {
         jLabel8.setText("Data Pegawai");
 
         jPanel1.setBackground(new java.awt.Color(166, 228, 244));
+        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 255), 2));
 
         jTable1.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -120,7 +121,7 @@ public class pegawai extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "id Pegawai", "Nama Pegawai", "Alamat Pegawai", "Nohp Pegawai"
+                "ID Pegawai", "Nama Pegawai", "Alamat Pegawai", "Nohp Pegawai"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -216,7 +217,7 @@ public class pegawai extends javax.swing.JFrame {
             }
         });
 
-        cbsearch.setBackground(new java.awt.Color(102, 204, 255));
+        cbsearch.setBackground(new java.awt.Color(0, 153, 255));
         cbsearch.setFont(new java.awt.Font("Comic Sans MS", 1, 11)); // NOI18N
         cbsearch.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "ID Pegawai", "Nama Pegawai", "Alamat Pegawai", "Nohp Pegawai" }));
 
@@ -349,12 +350,13 @@ public class pegawai extends javax.swing.JFrame {
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 503, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
